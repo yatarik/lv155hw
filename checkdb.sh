@@ -1,10 +1,19 @@
-echo "Enter DB name: "
+#!/bin/bash
+
+echo "Script: check database" 
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # no color
+
+echo -n "Enter DB name: "
+
 read DBNAME
-DBEXISTS=$(mysql --batch --skip-column-names -e "SHOW DATABASES LIKE '"$DBNAME"';" | grep "$DBNAME" > /dev/null; echo "$?" )
+DBEXISTS=$(mysql -u root -p --batch --skip-column-names -e "SHOW DATABASES LIKE '"$DBNAME"';" | grep "$DBNAME" > /dev/null; echo "$?" )
 if [ $DBEXISTS -eq 0 ]; 
 then
-	echo "A database with name $DBNAME already exists. "
+	printf " ${RED} A database with name $DBNAME already exists. ${NC} \n"
 	exit;
 else
-	echo "A database with name $DBNAME dosn't exist. "
+	printf "${GREEN} A database with name $DBNAME dosn't exist. ${NC} \n"
 fi
