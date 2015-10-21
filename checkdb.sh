@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf "\n---------------------------\n"
-printf " Script: check database \n" 
+printf " Script: check database " 
 printf "\n---------------------------\n"
 
 RED='\033[0;31m'
