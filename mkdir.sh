@@ -1,9 +1,14 @@
 #!/bin/bash
+
+printf "\n--------------------------------------\n"
+printf " Script: Make directory(ies)"         
+printf "\n--------------------------------------\n"
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # no color
 
-printf "Enter directories counters: \n"
+printf "Enter directory(ies) counter: \n"
 read count
 if ! [[ "$count" =~ ^[0-9]+$ ]]
 then
@@ -22,7 +27,7 @@ then
 else
 	printf "${RED} Directory $dirname exist ${NC}\n"
 fi;
-echo counter $count
+echo counter $count >> /dev/null
 let count-=1
 done
 fi

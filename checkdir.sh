@@ -1,5 +1,9 @@
 #!/bin/bash
 
+printf "\n-------------------------------\n"
+printf " Script: check directory"
+printf "\n-------------------------------\n"
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # no color
